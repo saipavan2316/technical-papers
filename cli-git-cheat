@@ -1,0 +1,206 @@
+# CLI Cheatsheet
+
+## 1. File and Directory Management
+
+| Command | Description |
+|---|---|
+| `mkdir -p` | To create nested directories |
+| `find -name "*.txt"` | Search by file name |
+| `find -type f` | Find all files |
+| `find -type d` | Find all directories |
+| `find -type f -name "*.log" -delete` | Search all files and search *.log files, -delete |
+| `ls -lahtr` | Hidden files, readable sizes, reverse time order respectively |
+| `wget "link"` | Is to download its contents in current directory |
+| `wget -o name "link"` | Same but download with name as filename |
+| `rsync -av project/ backup/` | Copies the contents of project into backup. |
+
+## 2. File Reading and Processing
+
+| Command | Description |
+|---|---|
+| `head -n -k` | Displays first k lines |
+| `tail -n -k` | Displays last k lines |
+| `less` and `more` | Read file page by page |
+| `wc` | Count lines, words and bytes respectively |
+| `sort -rnu` | Sorts alphabetically reverse, numeric, duplicates sorting respectively |
+| `uniq` | Remove adjacent duplicate lines |
+| `sed` | Edit text streams if we add -i then it modifies file directly |
+| `awk` | |
+| `cut` | |
+| `xargs` | It takes output and connects to input for another function |
+
+## 3. Text Searching
+
+| Command | Description |
+|---|---|
+| `grep` | Search text inside files |
+| `grep -i` | Case sensitive |
+| `grep -n` | Display line numbers |
+| `grep -r` | Search recursively |
+| `grep -v` | Non matching lines |
+| `grep -o` | Display only matched text |
+| `grep -c` | Count matching lines |
+
+## 4. File Permissions and Ownership
+
+| Command | Description |
+|---|---|
+| `chmod ugo file.txt` | u-user, g-group, o-others, 4\|r - read, 2\|w - write, 1\|x - execute |
+| `chown user:group file.txt` | Change owner and group and -R recursively |
+
+## 5. Redirection and Pipes
+
+| Symbol | Description |
+|---|---|
+| `\|` | Sends left side output as input to left |
+| `>` | Redirect output |
+| `>>` | Append output |
+| `<` | Take input from a file |
+| `2>` | Redirect errors |
+| `&>` | Redirect output and error i.e file descriptors |
+
+## 6. Process Management
+
+| Command | Description |
+|---|---|
+| `ps` | Display current process |
+| `ps -ef` | Full process listing |
+| `ps -u` | Process of a user |
+| `ps -p PID` | Display specific process through PID |
+| `ps -o` | Display specific output columns |
+| `top` | Live processes monitoring |
+| `htop` | Give the user-friendly summary of top |
+| `kill` | Gives the signal |
+| `kill -9` | Forceful termination |
+| `pkill` | Kill process by name |
+| `pkill -9` | |
+| `pgrep` | Find process IDs by name or pattern |
+| `jobs` | |
+
+## 7. Disk and Memory Management
+
+| Command | Description |
+|---|---|
+| `df -h` | Check disk space |
+| `du -h` | Directory sizes |
+| `du -sh` | Directory sizes, s adds summary to it |
+| `free -h` | Checks RAM usage |
+
+## 8. System Information
+
+| Command | Description |
+|---|---|
+| `uname -a -m` | Displays system information, all information, check architecture |
+| `whoami` | Display current username |
+| `lscpu` | Display CPU information |
+| `lspci` | Display PCI devices |
+| `id` | Display user IDs and group IDs |
+| `groups` | Display user groups |
+| `date` | Display date |
+| `uptime` | Display system uptime |
+| `hostname` | Display system hostname |
+
+## 9. Networking
+
+| Command | Description |
+|---|---|
+| `ping google.com` | Tests Google network connectivity |
+| `ping -c 4 google.com` | Send 4 packets |
+| `ip addr` | Display IP addresses |
+| `ip route` | Display routing table |
+| `ifconfig` | Display network interfaces |
+| `ss -tuln` | Display listening UDP and TCP ports |
+| `ss -tulpn` | Display listening ports and processes |
+| `ssh` | Connects to remote server |
+| `hostname -I` | Display local IP address |
+| `nslookup google.com` | Find IP addresses of domain |
+
+## 10. Package Management
+
+| Command | Description |
+|---|---|
+| `sudo apt update` | Updates packages |
+| `sudo apt upgrade` | Upgrades packages |
+| `sudo apt install package` | Install software |
+| `sudo apt remove package` | Remove software |
+| `sudo apt purge package` | Remove software and system configuration |
+| `sudo apt autoremove` | Remove unusual dependencies |
+| `apt search package` | Search |
+| `apt show package` | Show details |
+
+## 11. Environment Variables and Shell
+
+| Command | Description |
+|---|---|
+| `which python3` | Locate executable |
+| `echo $SHELL` | Display current shell |
+| `printenv` | Display environment variables |
+
+---
+
+## Nano Shortcuts
+
+| Shortcut | Description |
+|---|---|
+| `Ctrl + O` | Save file |
+| `Ctrl + X` | Exit |
+| `Ctrl + K` | Cut line |
+| `Ctrl + U` | Paste line |
+| `Ctrl + W` | Search text |
+
+## Terminal Shortcuts
+
+| Shortcut | Description |
+|---|---|
+| `Ctrl + C` | Interrupt running command |
+| `Ctrl + Z` | Suspend foreground process |
+| `Ctrl + D` | Send EOF / exit shell |
+| `Ctrl + L` | Clear terminal screen |
+| `Ctrl + R` | Search command history |
+| `Ctrl + A` | Move to beginning of line |
+| `Ctrl + E` | Move to end of line |
+| `Ctrl + U` | Delete from cursor to beginning |
+| `Ctrl + K` | Delete from cursor to end |
+| `Tab` | Autocomplete command/path |
+| `Up Arrow` | Previous command |
+| `Down Arrow` | Next command |
+
+---
+
+# Git Cheatsheet
+
+## 1. Repository Initialization and Status
+
+| Command | Description |
+|---|---|
+| `git init` | Initializing Git repository |
+| `git status` | Check repository status |
+
+## 2. Staging and Commits
+
+| Command | Description |
+|---|---|
+| `git add a.txt` | Adding a.txt file to staging |
+| `git add .` | Add files to staging |
+| `git commit -m "initial commit"` | Committing files |
+| `git log` | Display commit history |
+| `git commit --amend -m "Correct message"` | |
+| `git commit --amend --no-edit` | |
+
+## 3. Branching and Merging
+
+| Command | Description |
+|---|---|
+| `git branch leaf` | To create branch named leaf |
+| `git switch leaf` | To switch to branch named leaf |
+| `git branch` | Verify current branch |
+| `git merge leaf` | Merge leaf into master |
+
+## 4. Reset and Restore
+
+| Command | Description |
+|---|---|
+| `git reset master~1` | |
+| `git reset --hard HEAD~1` | |
+| `git reset --soft HEAD~1` | |
+| `git restore <filename>` | |
